@@ -10,7 +10,7 @@ public class GuiWorldTime {
     }
     
     public void onRenderGameOverlayPost(float partialticks) {
-        Window mainWindow = MinecraftClient.getInstance().getWindow();
+        Window mainWindow = MinecraftClient.getInstance().window;
         int ypos=5;
         int xpos=mainWindow.getScaledWidth()/2;
         MinecraftClient minecraft = MinecraftClient.getInstance();
