@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "package": "de.guntram.mcmod.worldtime.mixin",
+    "refmap": "WorldTime-refmap.json",
+    "minVersion": "0.6",
+    "client": [
+        "PotionEffectsMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
