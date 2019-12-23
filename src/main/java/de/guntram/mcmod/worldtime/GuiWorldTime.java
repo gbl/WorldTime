@@ -22,6 +22,7 @@ public class GuiWorldTime {
         int minutes = (int) ((minecraft.player.world.getTimeOfDay()%1000)*60/1000);
         String clock=String.format("%02d:%02d", hours, minutes);
         
-        minecraft.textRenderer.draw(clock, xpos-minecraft.textRenderer.getStringWidth(clock)/2, ypos, 0xffffff);
+        // minecraft.textRenderer.draw(clock, xpos-minecraft.textRenderer.getStringWidth(clock)/2, ypos, 0xffffff);
+        minecraft.textRenderer.draw(clock, 0, ypos, 0xffffff);
     }
 }
