@@ -5,6 +5,7 @@
  */
 package de.guntram.mcmod.worldtime;
 
+import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import net.fabricmc.api.ClientModInitializer;
 
 /**
@@ -21,7 +22,9 @@ public class WorldTime implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-
+        ConfigurationHandler confHandler = ConfigurationHandler.getInstance();
+        ConfigurationProvider.register(MODNAME, confHandler);
+        confHandler.load(ConfigurationProvider.getSuggestedFile(MODID));
     }
-    
+
 }

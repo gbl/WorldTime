@@ -10,19 +10,21 @@ public class GuiWorldTime {
     }
     
     public void onRenderGameOverlayPost(float partialticks) {
-        Window mainWindow = MinecraftClient.getInstance().getWindow();
-        int ypos=5;
-        int xpos=mainWindow.getScaledWidth()/2;
         MinecraftClient minecraft = MinecraftClient.getInstance();
-        
         if (minecraft == null  || minecraft.player == null || minecraft.player.world == null)
             return;
+        Window mainWindow = minecraft.getWindow();
         
         int hours=(int) (minecraft.player.world.getTimeOfDay()/1000+6)%24;
         int minutes = (int) ((minecraft.player.world.getTimeOfDay()%1000)*60/1000);
-        String clock=String.format("%02d:%02d", hours, minutes);
+        String clock=ConfigurationHandler.getPrefix()+String.format("%02d:%02d", hours, minutes);
+
+        int xneed = minecraft.textRenderer.getStringWidth(clock);
+        int yneed = minecraft.textRenderer.fontHeight;
         
-        // minecraft.textRenderer.draw(clock, xpos-minecraft.textRenderer.getStringWidth(clock)/2, ypos, 0xffffff);
-        minecraft.textRenderer.draw(clock, 0, ypos, 0xffffff);
+        int xpos = (mainWindow.getScaledWidth()-xneed)*ConfigurationHandler.getOffsetLeft()/100;
+        int ypos = (mainWindow.getScaledHeight()-yneed)*ConfigurationHandler.getOffsetTop()/100;
+
+        minecraft.textRenderer.draw(clock, xpos, ypos, 0xffffff);
     }
 }
