@@ -21,6 +21,7 @@ archivesBaseName = "worldtime"
 version = "1.14.4-fabric0.4.1-1.1"
 
 minecraft {
+    refmapName = "worldtime-refmap.json";
 }
 
 dependencies {
