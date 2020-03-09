@@ -21,9 +21,23 @@ ext.Versions = new Properties()
 Versions.load(file("../mcversion-20w10a.properties").newReader())
 
 archivesBaseName = "worldtime"
-version = "${Versions['minecraft_version']}-fabric${Versions['fabric_versiononly']}-1.1"
+ext.projectVersion = "1.1"
+
+version = "${Versions['minecraft_version']}-fabric${Versions['fabric_versiononly']}-${project.projectVersion}"
 
 minecraft {
+}
+
+processResources {
+	inputs.property "version", project.version
+
+    from(sourceSets.main.resources.srcDirs) {
+		include "fabric.mod.json"
+		expand "version": project.version
+	}
+	from(sourceSets.main.resources.srcDirs) {
+		exclude "fabric.mod.json"
+	}
 }
 
 dependencies {
