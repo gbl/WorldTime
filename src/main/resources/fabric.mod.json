@@ -1,7 +1,7 @@
 {
     "schemaVersion": 1,
     "id": "worldtime",
-    "version": "1.15-fabric0.4.23-1.1",
+    "version": "${version}",
     "environment": "client",
     "entrypoints": {
         "client": [ "de.guntram.mcmod.worldtime.WorldTime" ],
@@ -24,7 +24,7 @@
     "icon": "pack.png",
     "authors": [ "Giselbaer" ],
     "contact": {
-        "homepage": "https://minecraft.curseforge.com/projects/worldtime",
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/worldtime",
         "sources": "https://github.com/gbl/WorldTime",
         "issues": "https://github.com/gbl/WorldTime/issues"
     }
