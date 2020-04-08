@@ -18,7 +18,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 ext.Versions = new Properties()
-Versions.load(file("../mcversion-1.15.properties").newReader())
+Versions.load(file("mcversion-1.15.properties").newReader())
 
 archivesBaseName = "worldtime"
 ext.projectVersion = "1.2"
