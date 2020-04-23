@@ -19,7 +19,7 @@ public abstract class PotionEffectsMixin {
             target="Lnet/minecraft/client/options/GameOptions;debugEnabled:Z", 
             opcode = Opcodes.GETFIELD, args = {"log=false"}))
     
-    private void onRenderPotionEffects(MatrixStack stack, float f, CallbackInfo ci) {
+    private void beforeRenderDebugScreen(MatrixStack stack, float f, CallbackInfo ci) {
         if (guiWorldTime==null)
             guiWorldTime=new GuiWorldTime();
         guiWorldTime.onRenderGameOverlayPost(stack, 0);
