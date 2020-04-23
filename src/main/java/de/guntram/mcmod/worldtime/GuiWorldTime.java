@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.Window;
+import net.minecraft.client.util.math.MatrixStack;
 
 public class GuiWorldTime {
     
@@ -12,7 +13,7 @@ public class GuiWorldTime {
 
     }
     
-    public void onRenderGameOverlayPost(float partialticks) {
+    public void onRenderGameOverlayPost(MatrixStack stack, float partialticks) {
         MinecraftClient minecraft = MinecraftClient.getInstance();
         if (minecraft == null  || minecraft.player == null || minecraft.player.world == null)
             return;
@@ -29,7 +30,7 @@ public class GuiWorldTime {
             int xpos = (mainWindow.getScaledWidth()-xneed)*ConfigurationHandler.getOffsetLeft()/100;
             int ypos = (mainWindow.getScaledHeight()-yneed)*ConfigurationHandler.getOffsetTop()/100;
 
-            minecraft.textRenderer.draw(clock, xpos, ypos, 0xffffff);
+            minecraft.textRenderer.draw(stack, clock, xpos, ypos, 0xffffff);
         }
         
         if (ConfigurationHandler.wantRealTime()) {
@@ -47,7 +48,7 @@ public class GuiWorldTime {
             int xpos = (mainWindow.getScaledWidth()-xneed)*ConfigurationHandler.getRealTimeOffsetLeft()/100;
             int ypos = (mainWindow.getScaledHeight()-yneed)*ConfigurationHandler.getRealTimeOffsetTop()/100;
 
-            minecraft.textRenderer.draw(clock, xpos, ypos, 0xffffff);
+            minecraft.textRenderer.draw(stack, clock, xpos, ypos, 0xffffff);
         }
     }
 }
