@@ -24,7 +24,7 @@ public class GuiWorldTime {
             int minutes = (int) ((minecraft.player.world.getTimeOfDay()%1000)*60/1000);
             String clock=ConfigurationHandler.getPrefix()+String.format("%02d:%02d", hours, minutes);
 
-            int xneed = minecraft.textRenderer.getStringWidth(clock);
+            int xneed = minecraft.textRenderer.getWidth(clock);
             int yneed = minecraft.textRenderer.fontHeight;
 
             int xpos = (mainWindow.getScaledWidth()-xneed)*ConfigurationHandler.getOffsetLeft()/100;
@@ -42,7 +42,7 @@ public class GuiWorldTime {
                 clock = "illegal clock format; google for Java SimpleDateFormat";
             }
 
-            int xneed = minecraft.textRenderer.getStringWidth(clock);
+            int xneed = minecraft.textRenderer.getWidth(clock);
             int yneed = minecraft.textRenderer.fontHeight;
 
             int xpos = (mainWindow.getScaledWidth()-xneed)*ConfigurationHandler.getRealTimeOffsetLeft()/100;
