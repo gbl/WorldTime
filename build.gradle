@@ -24,6 +24,7 @@ archivesBaseName = "worldtime"
 ext.projectVersion = "1.2"
 
 version = "${Versions['minecraft_version']}-fabric${Versions['fabric_versiononly']}-${project.projectVersion}"
+Versions['gbfabrictools_version']="1.2.2+${Versions['minecraft_version']}"
 
 minecraft {
 }
@@ -56,4 +57,8 @@ dependencies {
 task sourcesJar(type: Jar, dependsOn: classes) {
 	classifier = 'sources'
 	from sourceSets.main.allSource
+}
+
+jar {
+	from "LICENSE"
 }
