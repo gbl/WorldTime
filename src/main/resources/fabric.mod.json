@@ -8,7 +8,11 @@
         "modmenu": [ "de.guntram.mcmod.worldtime.MMConfigurationHandler" ]
     },
     "custom": {
-        "modmenu:clientsideOnly": true
+        "modmenu:clientsideOnly": true,
+        "modupdater": {
+            "strategy": "json",
+            "url": "https://raw.githubusercontent.com/gbl/ModVersionInfo/master/WorldTime.json"
+        }
     },
     "mixins": [
       	"mixins.worldtime.json"
@@ -17,7 +21,8 @@
       "fabric": "*"
     },
     "recommends": {
-      "modmenu" : "*"
+        "modmenu" : "*",
+        "modupdater": ">=1.1.7"        
     },
     "name": "WorldTime",
     "description": "Display the current world time",
