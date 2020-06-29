@@ -21,7 +21,7 @@
     },
     "name": "WorldTime",
     "description": "Display the current world time",
-    "icon": "pack.png",
+    "icon": "icon.png",
     "authors": [ "Giselbaer" ],
     "contact": {
         "homepage": "https://www.curseforge.com/minecraft/mc-mods/worldtime",
