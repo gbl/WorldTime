@@ -1,0 +1,27 @@
+{
+    "worldtime.config.gametime":        "Spielzeit",
+    "worldtime.config.gametimex":       "Spielzeit X Prozent",
+    "worldtime.config.gametimey":       "Spielzeit Y Prozent",
+    "worldtime.config.gametimeprefix":  "Spielzeit Präfix",
+    
+    "worldtime.config.realtime":        "Uhrzeit",
+    "worldtime.config.realtimex":       "Uhrzeit X Prozent",
+    "worldtime.config.realtimey":       "Uhrzeit Y Prozent",
+    "worldtime.config.realtimeprefix":  "Uhrzeit Präfix",
+    "worldtime.config.realtimeformat":  "Uhrzeit Format",
+
+    "worldtime.config.coords":          "Koordinaten",
+    "worldtime.config.coordsx":         "Koordinaten X Prozent",
+    "worldtime.config.coordsy":         "Koordinaten Y Prozent",
+    "worldtime.config.coordsprefix":    "Koordinaten Präfix",
+    "worldtime.config.coordsformat":    "Koordinaten Format",
+    
+    "worldtime.config.tt.gametime":     "Zeit im Spiel anzeigen",
+    "worldtime.config.tt.realtime":     "Echte Uhrzeit anzeigen",
+    "worldtime.config.tt.offsetleft":   "Bildschirmposition links/rechts",
+    "worldtime.config.tt.offsettop":    "Bildschirmposition oben/unten",
+    "worldtime.config.tt.prefix":       "Präfix z.B. um Farben zu setzen",
+    
+    "worldtime.config.tt.realtimeformat":   "Uhrzeitformat, für Beispiele im Internet nach Java SimpleDateFormat suchen",
+    "worldtime.config.tt.coordformat":      "Koordinatenformat, {X}{Y}{Z} für Werte"
+}

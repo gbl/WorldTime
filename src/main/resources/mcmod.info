@@ -1,0 +1,16 @@
+[
+{
+  "modid": "worldtime",
+  "name": "WorldTime",
+  "description": "Display the current world time, wall clock time, and player coords",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Giselbaer"],
+  "credits": "",
+  "logoFile": "pack.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
