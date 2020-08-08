@@ -121,7 +121,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
         RTFormat=config.getString(CONF_RTFORMAT, Configuration.CATEGORY_CLIENT, "HH:mm:ss", "worldtime.config.tt.realtimeformat");
         RTPrefix=config.getString(CONF_RTPREFIX, Configuration.CATEGORY_CLIENT, "", "worldtime.config.tt.prefix");
 
-        wantCoords=config.getBoolean(CONF_CO, Configuration.CATEGORY_CLIENT, false, "Show real time");
+        wantCoords=config.getBoolean(CONF_CO, Configuration.CATEGORY_CLIENT, false, "worldtime.config.tt.coords");
         offsetCOLeft=config.getInt(CONF_COX, Configuration.CATEGORY_CLIENT, 0, 0, 100, "worldtime.config.tt.offsetleft");
         offsetCOTop=config.getInt(CONF_COY, Configuration.CATEGORY_CLIENT, 10, 0, 100, "worldtime.config.tt.offsettop");
         COFormat=config.getString(CONF_COFORMAT, Configuration.CATEGORY_CLIENT, "Position {X}/{Z} Height {Y}", "worldtime.config.tt.coordformat");

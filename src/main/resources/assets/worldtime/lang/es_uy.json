@@ -18,6 +18,7 @@
 
   "worldtime.config.tt.gametime":         "Mostrar el tiempo del juego (20 min / d\u0069a)",
   "worldtime.config.tt.realtime":         "Mostrar el tiempo real",
+  "worldtime.config.tt.coords":           "Mostrar coordenadas",
   "worldtime.config.tt.offsetleft":       "Posici\u00f3n en la pantalla §7- Izquierda §2\u2b0c §7Derecha",
   "worldtime.config.tt.offsettop":        "Posici\u00f3n en la pantalla §7- Arriba §2\u2b0c §7Abajo",
   "worldtime.config.tt.prefix":           "Prefijo, por ejemplo para definir colores",
