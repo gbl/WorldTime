@@ -18,6 +18,7 @@
     
     "worldtime.config.tt.gametime":     "Show ingame time",
     "worldtime.config.tt.realtime":     "Show real (wallclock) time",
+    "worldtime.config.tt.coords":       "Show Coords",
     "worldtime.config.tt.offsetleft":   "Left <-> Right position on screen",
     "worldtime.config.tt.offsettop":    "Top <-> Bottom position on screen",
     "worldtime.config.tt.prefix":       "Prefix, for example to define colors",
