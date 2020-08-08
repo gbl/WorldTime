@@ -1,0 +1,27 @@
+{
+  "worldtime.config.gametime":            "Tiempo del juego",
+  "worldtime.config.gametimex":           "§7  -  Porcentaje en X",
+  "worldtime.config.gametimey":           "§7  -  Porcentaje en Y",
+  "worldtime.config.gametimeprefix":      "§7  -  Prefijo",
+  
+  "worldtime.config.realtime":            "Tiempo real",
+  "worldtime.config.realtimex":           "§7  -  Porcentaje en X",
+  "worldtime.config.realtimey":           "§7  -  Porcentaje en Y",
+  "worldtime.config.realtimeprefix":      "§7  -  Prefijo",
+  "worldtime.config.realtimeformat":      "§7  -  Formato",
+
+  "worldtime.config.coords":              "Coordenadas",
+  "worldtime.config.coordsx":             "§7  -  Porcentaje en X",
+  "worldtime.config.coordsy":             "§7  -  Porcentaje en Y",
+  "worldtime.config.coordsprefix":        "§7  -  Prefijo",
+  "worldtime.config.coordsformat":        "§7  -  Formato",
+
+  "worldtime.config.tt.gametime":         "Mostrar el tiempo del juego (20 min / d\u0069a)",
+  "worldtime.config.tt.realtime":         "Mostrar el tiempo real",
+  "worldtime.config.tt.offsetleft":       "Posici\u00f3n en la pantalla §7- Izquierda §2\u2b0c §7Derecha",
+  "worldtime.config.tt.offsettop":        "Posici\u00f3n en la pantalla §7- Arriba §2\u2b0c §7Abajo",
+  "worldtime.config.tt.prefix":           "Prefijo, por ejemplo para definir colores",
+  
+  "worldtime.config.tt.realtimeformat":   "Formato de tiempo real\n§7Buscar en internet §cJava SimpleDateFormat §7para m\u00E1s informaci\u00f3n",
+  "worldtime.config.tt.coordformat":      "Formato de coordenadas\n§7Usar §a{X}{Y}{Z} §7para marcadores de posici\u00f3n"
+}
