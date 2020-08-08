@@ -18,6 +18,7 @@
     
     "worldtime.config.tt.gametime":     "显示游戏内时间 §7( 20 分钟 / 天 )",
     "worldtime.config.tt.realtime":     "显示现实时间",
+    "worldtime.config.tt.coords":       "显示坐标",
     "worldtime.config.tt.offsetleft":   "——  用于§l横向§r调节显示位置 §7( §r0§7 表示最左边 )",
     "worldtime.config.tt.offsettop":    " |  用于§l纵向§r调节显示位置 §7( §r0§7 表示最上方 )",
     "worldtime.config.tt.prefix":       "使用 “样式代码” 作为前缀来定制文本的样式\n§7( 例如: §r“&2”§7 会将文本变为§2翠绿色§7 )",
