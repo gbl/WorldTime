@@ -20,5 +20,7 @@
     "worldtime.config.tt.offsettop": "상단 <-> 하단 위치 화면",
     "worldtime.config.tt.prefix": "접두사(예: 색상 정의)",
     "worldtime.config.tt.realtimeformat": "실시간 형식, 예를 보려면 인터넷에서 Java SimpleDateFormat을 검색하십시오.",
-    "worldtime.config.tt.coordformat": "좌표 형식, 자리 표시자에 {X}{Y}{Z} 사용"
+    "worldtime.config.tt.coordformat": "좌표 형식, 자리 표시자에 {X}{Y}{Z} 사용",
+    "key.worldtime.header": "WorldTime",
+    "key.worldtime.config": "Open config screen"
 }

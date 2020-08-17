@@ -24,5 +24,8 @@
     "worldtime.config.tt.prefix":       "Prefix, for example to define colors",
     
     "worldtime.config.tt.realtimeformat":   "Real Time format, please search the internet for Java SimpleDateFormat for examples",
-    "worldtime.config.tt.coordformat":      "Coords format, use {X}{Y}{Z} for placeholders"
+    "worldtime.config.tt.coordformat":      "Coords format, use {X}{Y}{Z} for placeholders",
+    
+    "key.worldtime.header":     "WorldTime",
+    "key.worldtime.config":     "Open config screen"
 }
