@@ -20,5 +20,7 @@
     "worldtime.config.tt.offsettop": "Сверху <-> Снизу положение на экране",
     "worldtime.config.tt.prefix": "Префикс, например, для определения цветов",
     "worldtime.config.tt.realtimeformat": "Формат реального времени, к примеру, вы можете искать в интернете \"Java SimpleDateFormat\" для более подробной информации",
-    "worldtime.config.tt.coordformat": "Формат координат, используйте {X}{Y}{Z} для шаблонов"
+    "worldtime.config.tt.coordformat": "Формат координат, используйте {X}{Y}{Z} для шаблонов",
+    "key.worldtime.header": "WorldTime",
+    "key.worldtime.config": "Открыть экран настроек"
 }
