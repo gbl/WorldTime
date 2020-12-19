@@ -31,7 +31,7 @@ public class GuiWorldTime {
             String clock;
             try {
             	DateFormat dateFormat = new SimpleDateFormat(ConfigurationHandler.getRealTimeFormat());
-                clock = ConfigurationHandler.getRealTimePrefix()+dateFormat.format(new Date());
+                clock = ConfigurationHandler.getRealTimePrefix()+dateFormat.format(new Date(new Date().getTime()+ConfigurationHandler.getOffsetMinutes()*60*1000));
             } catch (IllegalArgumentException ex) {
                 clock = "illegal clock format; google for Java SimpleDateFormat";
             }
