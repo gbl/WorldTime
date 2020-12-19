@@ -4,6 +4,7 @@ import de.guntram.mcmod.GBForgetools.ConfigChangedEvent;
 import de.guntram.mcmod.GBForgetools.Configuration;
 import de.guntram.mcmod.GBForgetools.ModConfigurationHandler;
 import java.io.File;
+// import java.util.TimeZone;
 
 public class ConfigurationHandler implements ModConfigurationHandler
 {
@@ -22,6 +23,8 @@ public class ConfigurationHandler implements ModConfigurationHandler
     private int offsetRTTop;
     private String RTFormat;
     private String RTPrefix;
+    private int RTOffset;
+    // private TimeZone timezone;
     
     private boolean wantCoords;
     private int offsetCOLeft, offsetCOTop;
@@ -37,6 +40,8 @@ public class ConfigurationHandler implements ModConfigurationHandler
     private final String CONF_RTY = "worldtime.config.realtimey";
     private final String CONF_RTFORMAT = "worldtime.config.realtimeformat";
     private final String CONF_RTPREFIX = "worldtime.config.realtimeprefix";
+    private final String CONF_RTOFFSET = "worldtime.config.realtimeoffset";
+    // private final String CONF_RT_TZ = "worldtime.config.timezone";
     
     private final String CONF_CO =     "worldtime.config.coords";
     private final String CONF_COX =     "worldtime.config.coordsx";
@@ -84,6 +89,12 @@ public class ConfigurationHandler implements ModConfigurationHandler
                 case CONF_RTY:      offsetRTTop =(int)(Integer)(event.getNewValue()); break;
                 case CONF_RTFORMAT: RTFormat    = (String)(event.getNewValue()); break;
                 case CONF_RTPREFIX: RTPrefix    = (String)(event.getNewValue()); break;
+                case CONF_RTOFFSET: try {
+                    RTOffset    = Integer.parseInt((String)(event.getNewValue()));
+                } catch (NumberFormatException ex) {
+                    RTOffset = 0;
+                }
+                break;
                 
                 case CONF_CO:       wantCoords  =(boolean)(Boolean)(event.getNewValue()); break;
                 case CONF_COX:      offsetCOLeft=(int)(Integer)(event.getNewValue()); break;
@@ -95,6 +106,22 @@ public class ConfigurationHandler implements ModConfigurationHandler
     }
     
     private void loadConfig() {
+        
+        /* 
+        Using timezones sounds like a good idea, but isn't really as there are way too
+        many of them to select from.
+        String[] zones = TimeZone.getAvailableIDs();
+        String defaultZone = TimeZone.getDefault().getID();
+        int zoneIndex = -1;
+        for (int i=0; i<zones.length; i++) {
+            System.out.println("compare "+defaultZone+" with "+zones[i]);
+            if (zones[i].equals(defaultZone)) {
+                zoneIndex = i;
+                break;
+            }
+        }
+        */        
+        
         config.migrate("X Percent", CONF_GTX);
         config.migrate("Y Percent", CONF_GTY);
         config.migrate("Prefix",    CONF_GTPREFIX);
@@ -119,7 +146,14 @@ public class ConfigurationHandler implements ModConfigurationHandler
         offsetRTLeft=config.getInt(CONF_RTX, Configuration.CATEGORY_CLIENT, 0, 0, 100, "worldtime.config.tt.offsetleft");
         offsetRTTop=config.getInt(CONF_RTY, Configuration.CATEGORY_CLIENT, 10, 0, 100, "worldtime.config.tt.offsettop");
         RTFormat=config.getString(CONF_RTFORMAT, Configuration.CATEGORY_CLIENT, "HH:mm:ss", "worldtime.config.tt.realtimeformat");
+//        int configZoneIndex = config.getSelection(CONF_RT_TZ, Configuration.CATEGORY_CLIENT, zoneIndex, zones, "worldtime.config.tt.timezone");
+//        timezone = TimeZone.getTimeZone(zones[configZoneIndex]);
         RTPrefix=config.getString(CONF_RTPREFIX, Configuration.CATEGORY_CLIENT, "", "worldtime.config.tt.prefix");
+        try {
+            RTOffset = Integer.parseInt(config.getString(CONF_RTOFFSET, Configuration.CATEGORY_CLIENT, "0", "worldtime.config.tt.realtimeoffset"));
+        } catch (NumberFormatException ex) {
+            RTOffset = 0;
+        }
 
         wantCoords=config.getBoolean(CONF_CO, Configuration.CATEGORY_CLIENT, false, "worldtime.config.tt.coords");
         offsetCOLeft=config.getInt(CONF_COX, Configuration.CATEGORY_CLIENT, 0, 0, 100, "worldtime.config.tt.offsetleft");
@@ -146,6 +180,8 @@ public class ConfigurationHandler implements ModConfigurationHandler
     public static int getRealTimeOffsetLeft()   { return getInstance().offsetRTLeft; }
     public static int getRealTimeOffsetTop()    { return getInstance().offsetRTTop; }
     public static String getRealTimePrefix()    { return getInstance().RTPrefix.replace('&', '§'); }
+//    public static TimeZone getTimeZone()        { return getInstance().timezone; }
+    public static int getOffsetMinutes()        { return getInstance().RTOffset; }
 
     public static boolean wantCoords()          { return getInstance().wantCoords; }
     public static String getCoordsFormat()      { return getInstance().COFormat.replace('&', '§'); }
