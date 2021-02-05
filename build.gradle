@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
 	mavenCentral()
     }
@@ -18,7 +18,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "1.16.2-forge33.0.5-1.2.5"
+version = "1.16.5-forge36.0.14-1.2.5"
 group = "de.guntram.mcmod.WorldTime" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "worldtime"
 
@@ -28,11 +28,11 @@ compileJava {
 }
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200514-1.16'
+    mappings channel: 'snapshot', version: '20201028-1.16.3'
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.2-33.0.5'
+    minecraft 'net.minecraftforge:forge:1.16.4-35.0.7'
 
 }
 
@@ -61,6 +61,6 @@ task publishModrinth (type: TaskModrinthUpload){
     versionName = project.archivesBaseName
     releaseType = 'release'
     uploadFile = jar // This is the java jar task
-    addGameVersion("1.16.4")
+    addGameVersion("1.16.5")
     addLoader('forge')
 }
