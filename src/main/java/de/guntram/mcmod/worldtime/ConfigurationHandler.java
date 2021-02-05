@@ -17,6 +17,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
     private int offsetLeft;
     private int offsetTop;
     private String prefix;
+    private String GTFormat;
 
     private boolean wantRealTime;
     private int offsetRTLeft;
@@ -33,6 +34,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
     private final String CONF_GT = "worldtime.config.gametime";
     private final String CONF_GTX = "worldtime.config.gametimex";
     private final String CONF_GTY = "worldtime.config.gametimey";
+    private final String CONF_GTFORMAT = "worldtime.config.gametimeformat";
     private final String CONF_GTPREFIX = "worldtime.config.gametimeprefix";
 
     private final String CONF_RT = "worldtime.config.realtime";
@@ -82,6 +84,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
                 case CONF_GT:       wantGameTime=(boolean)(Boolean)(event.getNewValue()); break;
                 case CONF_GTX:      offsetLeft  =(int)(Integer)(event.getNewValue()); break;
                 case CONF_GTY:      offsetTop   =(int)(Integer)(event.getNewValue()); break;
+                case CONF_GTFORMAT: GTFormat    = (String)(event.getNewValue()); break;
                 case CONF_GTPREFIX: prefix      = (String)(event.getNewValue()); break;
                 
                 case CONF_RT:       wantRealTime=(boolean)(Boolean)(event.getNewValue()); break;
@@ -141,6 +144,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
         offsetLeft=config.getInt(CONF_GTX, Configuration.CATEGORY_CLIENT, 0, 0, 100, "worldtime.config.tt.offsetleft");
         offsetTop=config.getInt(CONF_GTY, Configuration.CATEGORY_CLIENT, 5, 0, 100, "worldtime.config.tt.offsettop");
         prefix=config.getString(CONF_GTPREFIX, Configuration.CATEGORY_CLIENT, "", "worldtime.config.tt.prefix");
+        GTFormat=config.getString(CONF_GTFORMAT, Configuration.CATEGORY_CLIENT, "HH:mm", "worldtime.config.tt.gametimeformat");
         
         wantRealTime=config.getBoolean(CONF_RT, Configuration.CATEGORY_CLIENT, false, "worldtime.config.tt.realtime");
         offsetRTLeft=config.getInt(CONF_RTX, Configuration.CATEGORY_CLIENT, 0, 0, 100, "worldtime.config.tt.offsetleft");
@@ -171,6 +175,7 @@ public class ConfigurationHandler implements ModConfigurationHandler
     }
 
     public static boolean wantGameTime()        { return getInstance().wantGameTime; }
+    public static String getGameTimeFormat()    { return getInstance().GTFormat; }
     public static int getOffsetLeft()           { return getInstance().offsetLeft; }
     public static int getOffsetTop()            { return getInstance().offsetTop; }
     public static String getPrefix()            { return getInstance().prefix.replace('&', '§'); }

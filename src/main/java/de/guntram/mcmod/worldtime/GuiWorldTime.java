@@ -28,7 +28,13 @@ public class GuiWorldTime {
         if (ConfigurationHandler.wantGameTime()) {
             int hours=(int) (minecraft.player.world.getDayTime()/1000+6)%24;
             int minutes = (int) ((minecraft.player.world.getDayTime()%1000)*60/1000);
-            String clock=ConfigurationHandler.getPrefix()+String.format("%02d:%02d", hours, minutes);
+            String clock;
+            try {
+                DateFormat dateFormat = new SimpleDateFormat(ConfigurationHandler.getGameTimeFormat());
+                clock = ConfigurationHandler.getPrefix()+dateFormat.format(new Date(new Date(100, 0, 1, hours, minutes, 0).getTime()));
+            } catch (IllegalArgumentException ex) {
+                clock = "illegal clock format; google for Java SimpleDateFormat";
+            }
             
             displayStringAtPercentages(stack, clock, ConfigurationHandler.getOffsetLeft(), ConfigurationHandler.getOffsetTop());
         }
@@ -62,6 +68,6 @@ public class GuiWorldTime {
         int xpos = (mainWindow.getScaledWidth()-xneed)*xperc/100;
         int ypos = (mainWindow.getScaledHeight()-yneed)*yperc/100;
 
-        minecraft.fontRenderer.func_238405_a_(stack, string, xpos, ypos, 0xffffff);
+        minecraft.fontRenderer.drawString(stack, string, xpos, ypos, 0xffffff);
     }
 }
