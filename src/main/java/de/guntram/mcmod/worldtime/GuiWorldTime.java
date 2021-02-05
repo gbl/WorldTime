@@ -2,7 +2,9 @@ package de.guntram.mcmod.worldtime;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
@@ -20,13 +22,20 @@ public class GuiWorldTime {
             return;
 
         if (ConfigurationHandler.wantGameTime()) {
-            int hours=(int) (minecraft.player.world.getTimeOfDay()/1000+6)%24;
-            int minutes = (int) ((minecraft.player.world.getTimeOfDay()%1000)*60/1000);
+            long daytime = minecraft.player.world.getTimeOfDay()+6000;
+            
+            int hours=(int) (daytime / 1000)%24;
+            int minutes = (int) ((daytime % 1000)*60/1000);
+            int day = (int) daytime / 1000 / 24;
             String clock;
             try {
-                DateFormat dateFormat = new SimpleDateFormat(ConfigurationHandler.getGameTimeFormat());
-                clock = ConfigurationHandler.getPrefix()+dateFormat.format(new Date(new Date(100, 0, 1, hours, minutes, 0).getTime()));
-            } catch (IllegalArgumentException ex) {
+                String strDateFormat = ConfigurationHandler.getGameTimeFormat().replace("J", Integer.toString(day));
+                DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+                Calendar calendar = new GregorianCalendar();
+                calendar.set(2000, 0, day+1, hours, minutes, 0);
+
+                clock = ConfigurationHandler.getPrefix()+dateFormat.format(calendar.getTimeInMillis());
+             } catch (IllegalArgumentException ex) {
                 clock = "illegal clock format; google for Java SimpleDateFormat";
             }
             
