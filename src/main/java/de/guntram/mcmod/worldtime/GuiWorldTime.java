@@ -22,7 +22,14 @@ public class GuiWorldTime {
         if (ConfigurationHandler.wantGameTime()) {
             int hours=(int) (minecraft.player.world.getTimeOfDay()/1000+6)%24;
             int minutes = (int) ((minecraft.player.world.getTimeOfDay()%1000)*60/1000);
-            String clock=ConfigurationHandler.getPrefix()+String.format("%02d:%02d", hours, minutes);
+            String clock;
+            try {
+                DateFormat dateFormat = new SimpleDateFormat(ConfigurationHandler.getGameTimeFormat());
+                clock = ConfigurationHandler.getPrefix()+dateFormat.format(new Date(new Date(100, 0, 1, hours, minutes, 0).getTime()));
+            } catch (IllegalArgumentException ex) {
+                clock = "illegal clock format; google for Java SimpleDateFormat";
+            }
+            
             
             displayStringAtPercentages(stack, clock, ConfigurationHandler.getOffsetLeft(), ConfigurationHandler.getOffsetTop());
         }
