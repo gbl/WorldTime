@@ -3,7 +3,9 @@ package de.guntram.mcmod.worldtime;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import net.minecraft.client.MainWindow;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -26,12 +28,19 @@ public class GuiWorldTime {
         MatrixStack stack = event.getMatrixStack();
         
         if (ConfigurationHandler.wantGameTime()) {
-            int hours=(int) (minecraft.player.world.getDayTime()/1000+6)%24;
-            int minutes = (int) ((minecraft.player.world.getDayTime()%1000)*60/1000);
+            long daytime = minecraft.player.world.getDayTime() +6000;       // 0 is 6 in the morning,,,
+            
+            int hours=(int) (daytime / 1000)%24;
+            int minutes = (int) ((daytime % 1000)*60/1000);
+            int day = (int) daytime / 1000 / 24;
             String clock;
             try {
-                DateFormat dateFormat = new SimpleDateFormat(ConfigurationHandler.getGameTimeFormat());
-                clock = ConfigurationHandler.getPrefix()+dateFormat.format(new Date(new Date(100, 0, 1, hours, minutes, 0).getTime()));
+                String strDateFormat = ConfigurationHandler.getGameTimeFormat().replace("J", Integer.toString(day));
+                DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+                Calendar calendar = new GregorianCalendar();
+                calendar.set(2000, 0, day+1, hours, minutes, 0);
+                
+                clock = ConfigurationHandler.getPrefix()+dateFormat.format(calendar.getTimeInMillis());
             } catch (IllegalArgumentException ex) {
                 clock = "illegal clock format; google for Java SimpleDateFormat";
             }
