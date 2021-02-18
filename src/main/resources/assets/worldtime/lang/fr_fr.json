@@ -23,7 +23,7 @@
     "worldtime.config.tt.offsetleft": "Position Gauche <-> Droite sur l'écran",
     "worldtime.config.tt.offsettop": "Position Haut <-> Bas sur l'écran",
     "worldtime.config.tt.prefix": "Préfixe, pour, par exemple, définir des couleurs",
-    "worldtime.config.tt.realtimeformat": "Real Time format, please search the internet for Java SimpleDateFormat for examples. 'HH:mm:ss' for 24h, 'hh:mm:ss a' for am/pm.",
+    "worldtime.config.tt.realtimeformat": "Format d'affichage en temps réel, veuillez rechercher des exemples sur Internet pour Java SimpleDateFormat . 'HH:mm:ss' pour un format sur 24h, 'hh:mm:ss a' pour le format sur 12h.",
     "worldtime.config.tt.coordformat": "Format de coordonnées, utilisez {X}{Y}{Z} pour des places disponibles",
     "key.worldtime.header": "WorldTime",
     "key.worldtime.config": "Ouvrir l’écran de configuration"
