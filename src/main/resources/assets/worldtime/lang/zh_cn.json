@@ -26,5 +26,5 @@
     "worldtime.config.tt.realtimeformat": "Real Time format, please search the internet for Java SimpleDateFormat for examples. 'HH:mm:ss' for 24h, 'hh:mm:ss a' for am/pm.",
     "worldtime.config.tt.coordformat": "决定了以何种格式显示你的坐标\n§7( 请使用 §2{X} {Y} {Z}§7 作为对应坐标的占位符 )",
     "key.worldtime.header": "WorldTime",
-    "key.worldtime.config": "Open config screen"
+    "key.worldtime.config": "开启配置介面"
 }
