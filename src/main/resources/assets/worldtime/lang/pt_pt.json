@@ -19,7 +19,7 @@
     "worldtime.config.tt.gametimeformat": "Formato de horas do jogo, por favor pesquise na internet \"Java SImpleDateFormat\" para exemplos (Em inglês). \"HH:mm\" para formato 24 horas, e \"hh:mm a\" para formato 12 horas (Am/Pm).",
     "worldtime.config.tt.realtime": "Mostra a hora real (relógio)",
     "worldtime.config.tt.realtimeoffset": "Adiciona estes números de minutos ao tempo real, se você joga num servidor com um fuso horário diferente",
-    "worldtime.config.tt.coords": "Mostra as coordenadas",
+    "worldtime.config.tt.coords": "Mostrar coordenadas",
     "worldtime.config.tt.offsetleft": "Posiciona na tela entre Esquerda <-> Direita",
     "worldtime.config.tt.offsettop": "Posiciona na tela entre Cima <-> Baixo",
     "worldtime.config.tt.prefix": "Prefixos, por exemplo para definir cores",

@@ -16,15 +16,15 @@
     "worldtime.config.coordsprefix": "  -  调整文本样式",
     "worldtime.config.coordsformat": "  -  调整显示格式",
     "worldtime.config.tt.gametime": "显示游戏内时间 §7( 20 分钟 / 天 )",
-    "worldtime.config.tt.gametimeformat": "Game Time format, please search the internet for Java SimpleDateFormat for examples. 'HH:mm' for 24h, 'hh:mm a' for am/pm.",
+    "worldtime.config.tt.gametimeformat": "游戏时间格式，请在互联网上搜索“Java SimpleDateFormat”以获取示例。'HH:mm' 为 24 小时制式，'hh:mm a' 为 12 小时制式。",
     "worldtime.config.tt.realtime": "显示现实时间",
-    "worldtime.config.tt.realtimeoffset": "Add this many minutes to the real time, if you play on a server in a different time zone",
+    "worldtime.config.tt.realtimeoffset": "在现实时间的基础上添加额外的分钟数，用于帮助你游玩时区不同的服务器",
     "worldtime.config.tt.coords": "显示坐标",
     "worldtime.config.tt.offsetleft": "——  用于§l横向§r调节显示位置 §7( §r0§7 表示最左边 )",
     "worldtime.config.tt.offsettop": " |  用于§l纵向§r调节显示位置 §7( §r0§7 表示最上方 )",
     "worldtime.config.tt.prefix": "使用 “样式代码” 作为前缀来定制文本的样式\n§7( 例如: §r“&2”§7 会将文本变为§2翠绿色§7 )",
-    "worldtime.config.tt.realtimeformat": "Real Time format, please search the internet for Java SimpleDateFormat for examples. 'HH:mm:ss' for 24h, 'hh:mm:ss a' for am/pm.",
+    "worldtime.config.tt.realtimeformat": "现实时间格式，请在互联网上搜索“Java SimpleDateFormat”以获取示例。'HH:mm:ss' 为 24 小时制式，'hh:mm:ss a' 为 12 小时制式。",
     "worldtime.config.tt.coordformat": "决定了以何种格式显示你的坐标\n§7( 请使用 §2{X} {Y} {Z}§7 作为对应坐标的占位符 )",
-    "key.worldtime.header": "WorldTime",
-    "key.worldtime.config": "开启配置介面"
+    "key.worldtime.header": "世界时间",
+    "key.worldtime.config": "打开配置界面"
 }

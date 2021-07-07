@@ -18,13 +18,13 @@
     "worldtime.config.tt.gametime": "Mostrar el tiempo del juego (20 min / dia)",
     "worldtime.config.tt.gametimeformat": "Formato de tiempo de juego, busque ejemplos en Internet Java SimpleDateFormat.",
     "worldtime.config.tt.realtime": "Mostrar el tiempo real",
-    "worldtime.config.tt.realtimeoffset": "Añade estos minutos a tiempo real, si juegas en un servidor en una zona horaria diferente",
+    "worldtime.config.tt.realtimeoffset": "Añade estos minutos al tiempo real, si juegas en un servidor en una zona horaria diferente",
     "worldtime.config.tt.coords": "Mostrar coordenadas",
     "worldtime.config.tt.offsetleft": "Posición en la pantalla §7- Izquierda §2⬌ §7Derecha",
     "worldtime.config.tt.offsettop": "Posición en la pantalla §7- Arriba §2⬌ §7Abajo",
     "worldtime.config.tt.prefix": "Prefijo, por ejemplo para definir colores",
     "worldtime.config.tt.realtimeformat": "Formato en tiempo real, por favor busque ejemplos en Internet Java SimpleDateFormat. 'HH:mm:ss' para 24h, 'hh:mm:ss a' para am/pm.",
     "worldtime.config.tt.coordformat": "Formato de coordenadas\n§7Usar §a{X}{Y}{Z} §7para marcadores de posición",
-    "key.worldtime.header": "WorldTime",
-    "key.worldtime.config": "Abrir pantalla config"
+    "key.worldtime.header": "TiempoGlobal",
+    "key.worldtime.config": "Abrir pantalla de configuración"
 }

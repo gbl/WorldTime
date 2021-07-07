@@ -10,7 +10,7 @@
     "worldtime.config.realtimeprefix": "Префикс реального времени",
     "worldtime.config.realtimeformat": "Формат реального времени",
     "worldtime.config.realtimeoffset": "Смещение реального времени",
-    "worldtime.config.coords": "Кооридинаты",
+    "worldtime.config.coords": "Координаты",
     "worldtime.config.coordsx": "Координата X в процентах",
     "worldtime.config.coordsy": "Координата Y в процентах",
     "worldtime.config.coordsprefix": "Префикс координат",
