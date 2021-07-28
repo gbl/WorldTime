@@ -5,10 +5,10 @@
  */
 package de.guntram.mcmod.worldtime;
 
-import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.client.KeyMapping;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fmlclient.registry.ClientRegistry;
 import org.lwjgl.glfw.GLFW;
 
 /**
@@ -16,17 +16,17 @@ import org.lwjgl.glfw.GLFW;
  * @author gbl
  */
 public class ConfigKey {
-    static KeyBinding configKey;
+    static KeyMapping configKey;
     
     ConfigKey() {
         if (configKey == null) {
-            ClientRegistry.registerKeyBinding(configKey = new KeyBinding("key.worldtime.config", GLFW.GLFW_KEY_UNKNOWN, "key.worldtime.header"));
+            ClientRegistry.registerKeyBinding(configKey = new KeyMapping("key.worldtime.config", GLFW.GLFW_KEY_UNKNOWN, "key.worldtime.header"));
         }
     }
 
     @SubscribeEvent
     public void keyPressed(final InputEvent.KeyInputEvent e) {
-        if (configKey.isPressed()) {
+        if (configKey.consumeClick()) {
             WorldTime.openConfigScreen();
         }
     }    

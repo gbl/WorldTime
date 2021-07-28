@@ -1,12 +1,12 @@
 package de.guntram.mcmod.worldtime;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.Window;
+import com.mojang.blaze3d.vertex.PoseStack;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import net.minecraft.client.MainWindow;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -22,13 +22,13 @@ public class GuiWorldTime {
     
     @SubscribeEvent(priority = EventPriority.NORMAL)    
     public void onRenderGameOverlayPost(RenderGameOverlayEvent.Text event) {
-        if (minecraft == null  || minecraft.player == null || minecraft.player.world == null)
+        if (minecraft == null  || minecraft.player == null || minecraft.player.level == null)
             return;
 
-        MatrixStack stack = event.getMatrixStack();
+        PoseStack stack = event.getMatrixStack();
         
         if (ConfigurationHandler.wantGameTime()) {
-            long daytime = minecraft.player.world.getDayTime() +6000;       // 0 is 6 in the morning,,,
+            long daytime = minecraft.player.clientLevel.getDayTime() +6000;       // 0 is 6 in the morning,,,
             
             int hours=(int) (daytime / 1000)%24;
             int minutes = (int) ((daytime % 1000)*60/1000);
@@ -62,21 +62,21 @@ public class GuiWorldTime {
         if (ConfigurationHandler.wantCoords()) {
             String coords = ConfigurationHandler.getCoordsPrefix()+
                     ConfigurationHandler.getCoordsFormat()
-                        .replace("{X}", String.format("%.1f", minecraft.player.getPosX()))
-                        .replace("{Y}", String.format("%.1f", minecraft.player.getPosY()))
-                        .replace("{Z}", String.format("%.1f", minecraft.player.getPosZ()));
+                        .replace("{X}", String.format("%.1f", minecraft.player.getX()))
+                        .replace("{Y}", String.format("%.1f", minecraft.player.getY()))
+                        .replace("{Z}", String.format("%.1f", minecraft.player.getZ()));
             displayStringAtPercentages(stack, coords, ConfigurationHandler.getCoordsOffsetLeft(), ConfigurationHandler.getCoordsOffsetTop());
         }
     }
     
-    private void displayStringAtPercentages(MatrixStack stack, String string, int xperc, int yperc) {
-        MainWindow mainWindow = minecraft.getMainWindow();
-        int xneed = minecraft.fontRenderer.getStringWidth(string);
-        int yneed = minecraft.fontRenderer.FONT_HEIGHT;
+    private void displayStringAtPercentages(PoseStack stack, String string, int xperc, int yperc) {
+        Window mainWindow = minecraft.getWindow();
+        int xneed = minecraft.font.width(string);
+        int yneed = minecraft.font.lineHeight;
 
-        int xpos = (mainWindow.getScaledWidth()-xneed)*xperc/100;
-        int ypos = (mainWindow.getScaledHeight()-yneed)*yperc/100;
+        int xpos = (mainWindow.getGuiScaledWidth()-xneed)*xperc/100;
+        int ypos = (mainWindow.getGuiScaledHeight()-yneed)*yperc/100;
 
-        minecraft.fontRenderer.drawString(stack, string, xpos, ypos, 0xffffff);
+        minecraft.font.draw(stack, string, xpos, ypos, 0xffffff);
     }
 }
