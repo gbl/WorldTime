@@ -17,6 +17,7 @@ buildscript {
 plugins {
     id "com.modrinth.minotaur" version "1.1.0"
     id "com.matthewprenger.cursegradle" version "1.4.0"
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
 apply plugin: 'de.guntram.mcmod.crowdin-translate'
@@ -56,6 +57,16 @@ jar {
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+}
+
+shadowJar {
+   configurations = []
+   relocate 'de.guntram.mcmod.GBForgetools', 'de.guntram.mcmod.GBForgetools.WorldTime'
+   classifier ''	// replace the default JAR
+}
+
+reobf {
+    shadowJar {}
 }
 
 import com.modrinth.minotaur.TaskModrinthUpload
