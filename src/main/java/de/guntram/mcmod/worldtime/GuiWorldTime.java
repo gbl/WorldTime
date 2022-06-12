@@ -25,7 +25,7 @@ public class GuiWorldTime {
         if (minecraft == null  || minecraft.player == null || minecraft.player.level == null)
             return;
 
-        PoseStack stack = event.getMatrixStack();
+        PoseStack stack = event.getPoseStack();
         
         if (ConfigurationHandler.wantGameTime()) {
             long daytime = minecraft.player.clientLevel.getDayTime() +6000;       // 0 is 6 in the morning,,,

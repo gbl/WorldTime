@@ -1,9 +1,9 @@
 {
-    "worldtime.config.gametime": "Game Time",
+    "worldtime.config.gametime": "Pelin Aika",
     "worldtime.config.gametimex": "Game Time X Percent",
     "worldtime.config.gametimey": "Game Time Y Percent",
-    "worldtime.config.gametimeprefix": "Game Time Prefix",
-    "worldtime.config.gametimeformat": "Game Time Format",
+    "worldtime.config.gametimeprefix": "Peliajan Etuliite",
+    "worldtime.config.gametimeformat": "Pelin Aika Muoto",
     "worldtime.config.realtime": "Real Time",
     "worldtime.config.realtimex": "Real Time X Percent",
     "worldtime.config.realtimey": "Real Time Y Percent",
