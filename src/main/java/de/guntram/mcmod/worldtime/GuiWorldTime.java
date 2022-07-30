@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -21,7 +21,7 @@ public class GuiWorldTime {
     }
     
     @SubscribeEvent(priority = EventPriority.NORMAL)    
-    public void onRenderGameOverlayPost(RenderGameOverlayEvent.Text event) {
+    public void onRenderGameOverlayPost(RenderGuiOverlayEvent.Post event) {
         if (minecraft == null  || minecraft.player == null || minecraft.player.level == null)
             return;
 

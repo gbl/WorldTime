@@ -23,8 +23,8 @@
     "worldtime.config.tt.offsetleft": "Слева <-> Справа положение на экране",
     "worldtime.config.tt.offsettop": "Вверх <-> Низ положения на экране",
     "worldtime.config.tt.prefix": "Префикс, например, для определения цветов",
-    "worldtime.config.tt.realtimeformat": "Формат игрового времени, пожалуйста, найдите в интернете примеры Java SimpleDateFormat. 'HH:mm:ss' для 24 часов, 'hh:mm:ss a' для am/pm.",
+    "worldtime.config.tt.realtimeformat": "Формат реального времени, пожалуйста, найдите в интернете примеры Java SimpleDateFormat. 'HH:mm:ss' для 24 часов, 'hh:mm:ss a' для am/pm.",
     "worldtime.config.tt.coordformat": "Формат координат, используйте {X}{Y}{Z} для шаблонов",
-    "key.worldtime.header": "Время мира",
+    "key.worldtime.header": "WorldTime",
     "key.worldtime.config": "Открыть настройки"
 }

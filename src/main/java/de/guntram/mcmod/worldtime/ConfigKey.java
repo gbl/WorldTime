@@ -6,7 +6,6 @@
 package de.guntram.mcmod.worldtime;
 
 import net.minecraft.client.KeyMapping;
-import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
@@ -20,12 +19,12 @@ public class ConfigKey {
     
     ConfigKey() {
         if (configKey == null) {
-            ClientRegistry.registerKeyBinding(configKey = new KeyMapping("key.worldtime.config", GLFW.GLFW_KEY_UNKNOWN, "key.worldtime.header"));
+            configKey = new KeyMapping("key.worldtime.config", GLFW.GLFW_KEY_UNKNOWN, "key.worldtime.header");
         }
     }
 
     @SubscribeEvent
-    public void keyPressed(final InputEvent.KeyInputEvent e) {
+    public void keyPressed(final InputEvent.Key e) {
         if (configKey.consumeClick()) {
             WorldTime.openConfigScreen();
         }
