@@ -26,5 +26,5 @@
     "worldtime.config.tt.realtimeformat": "실시간 서식입니다. 인터넷에서 Java SimpleDateFormat에서 서식을 검색하세요. 예를 들어 24시간 기준 'HH:mm', am/pm 표시 'hh:mm a'.",
     "worldtime.config.tt.coordformat": "좌표 형식, 자리 표시자에 {X}{Y}{Z} 사용",
     "key.worldtime.header": "WorldTime",
-    "key.worldtime.config": "환경설정 화면 열기"
+    "key.worldtime.config": "설정 화면 열기"
 }
