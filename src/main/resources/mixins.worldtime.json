@@ -4,7 +4,7 @@
     "refmap": "worldtime-refmap.json",
     "minVersion": "0.6",
     "client": [
-        "PotionEffectsMixin"
+        "WorldTimeHudMixin"
     ],
     "injectors": {
         "defaultRequire": 1

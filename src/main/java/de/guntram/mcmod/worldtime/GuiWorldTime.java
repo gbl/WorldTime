@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
 
@@ -17,12 +18,12 @@ public class GuiWorldTime {
         minecraft = MinecraftClient.getInstance();
     }
     
-    public void onRenderGameOverlayPost(MatrixStack stack, float partialticks) {
-        if (minecraft == null  || minecraft.player == null || minecraft.player.world == null)
+    public void onRenderGameOverlayPost(DrawContext context, float partialticks) {
+        if (minecraft == null  || minecraft.player == null || minecraft.player.getWorld() == null)
             return;
 
         if (ConfigurationHandler.wantGameTime()) {
-            long daytime = minecraft.player.world.getTimeOfDay()+6000;
+            long daytime = minecraft.player.getWorld().getTimeOfDay()+6000;
             
             int hours=(int) (daytime / 1000)%24;
             int minutes = (int) ((daytime % 1000)*60/1000);
@@ -40,7 +41,7 @@ public class GuiWorldTime {
             }
             
             
-            displayStringAtPercentages(stack, clock, ConfigurationHandler.getOffsetLeft(), ConfigurationHandler.getOffsetTop());
+            displayStringAtPercentages(context, clock, ConfigurationHandler.getOffsetLeft(), ConfigurationHandler.getOffsetTop());
         }
 
         if (ConfigurationHandler.wantRealTime()) {
@@ -51,7 +52,7 @@ public class GuiWorldTime {
             } catch (IllegalArgumentException ex) {
                 clock = "illegal clock format; google for Java SimpleDateFormat";
             }
-            displayStringAtPercentages(stack, clock, ConfigurationHandler.getRealTimeOffsetLeft(), ConfigurationHandler.getRealTimeOffsetTop());
+            displayStringAtPercentages(context, clock, ConfigurationHandler.getRealTimeOffsetLeft(), ConfigurationHandler.getRealTimeOffsetTop());
         }
         
         if (ConfigurationHandler.wantCoords()) {
@@ -60,11 +61,11 @@ public class GuiWorldTime {
                         .replace("{X}", String.format("%.1f", minecraft.player.getPos().x))
                         .replace("{Y}", String.format("%.1f", minecraft.player.getPos().y))
                         .replace("{Z}", String.format("%.1f", minecraft.player.getPos().z));
-            displayStringAtPercentages(stack, coords, ConfigurationHandler.getCoordsOffsetLeft(), ConfigurationHandler.getCoordsOffsetTop());
+            displayStringAtPercentages(context, coords, ConfigurationHandler.getCoordsOffsetLeft(), ConfigurationHandler.getCoordsOffsetTop());
         }
     }
     
-    private void displayStringAtPercentages(MatrixStack stack, String string, int xperc, int yperc) {
+    private void displayStringAtPercentages(DrawContext context, String string, int xperc, int yperc) {
         Window mainWindow = minecraft.getWindow();
         int xneed = minecraft.textRenderer.getWidth(string);
         int yneed = minecraft.textRenderer.fontHeight;
@@ -72,6 +73,6 @@ public class GuiWorldTime {
         int xpos = (mainWindow.getScaledWidth()-xneed)*xperc/100;
         int ypos = (mainWindow.getScaledHeight()-yneed)*yperc/100;
 
-        minecraft.textRenderer.draw(stack, string, xpos, ypos, 0xffffff);
+        context.drawTextWithShadow(minecraft.textRenderer, string, xpos, ypos, 0xffffff);
     }
 }
