@@ -14,12 +14,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class WorldTimeHudMixin {
     
     private static GuiWorldTime guiWorldTime;
-    
+
     @Inject(method="render", at=@At(
-            value="FIELD", 
-            target="Lnet/minecraft/client/option/GameOptions;debugEnabled:Z", 
-            opcode = Opcodes.GETFIELD, args = {"log=false"}))
-    
+            value="INVOKE",
+            target="Lnet/minecraft/client/gui/hud/DebugHud;shouldShowDebugHud()Z"))
+
     private void beforeRenderDebugScreen(DrawContext context, float f, CallbackInfo ci) {
         if (guiWorldTime==null)
             guiWorldTime=new GuiWorldTime();
